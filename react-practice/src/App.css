@@ -6,3 +6,7 @@
 tr{
     cursor: pointer;
 }
+
+.clickable {
+    cursor: pointer;
+}
