@@ -1,6 +1,6 @@
 import type { ICard } from "../../../interfaces/card";
 
-const CardListItem = ({ card }: { card: ICard }) => {
+export default function CardListItem({ card }: { card: ICard }) {
     return (
         <div className="card mb-1" key={card.id}>
             <img src={card.imageUrl} alt={card.name} className="card-img-top" />
@@ -9,5 +9,3 @@ const CardListItem = ({ card }: { card: ICard }) => {
         </div>
     );
 };
-
-export default CardListItem;

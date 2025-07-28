@@ -1,28 +1,29 @@
 import { useParams } from "react-router";
-import useBox from "../../../hooks/useBox";
-import BoxRows from "../BoxRows/BoxRows";
+import BoxRows from "./BoxRows";
 import Title from "../../Title";
+import BoxDetails from "./BoxDetails";
+import useFetch from "../../../hooks/useFetch";
+import type { IBox } from "../../../interfaces/box";
+import PageNotFound from "../../Errors/PageNotFound";
+import Spinner from "../../Spinner";
 
-const Box: React.FC = () => {
+export default function Box() {
     const { id } = useParams();
-    const numberId = Number(id);
-    const { box } = useBox(numberId);
+    const { data: box, loading, error } = useFetch<IBox>(`boxes/${id}`);
 
-    if (!box) {
-        return <p>No box data available.</p>;
-    }
-
+    if (error) throw error;
+    if (loading) return <Spinner/>;
+    if (!box) return <PageNotFound/>
+    
     return (
         <>
-            <Title>{box.name}</Title>
-            <img src={box.imageUrl} alt={box.name} className="mb-3 w-100 h-25 overflow-y-hidden" />
-            <p>Created: {new Date(box.createdDate).toLocaleDateString()}</p>
-            <p>Last Updated: {new Date(box.updatedDate).toLocaleDateString()}</p>
-
-            <BoxRows rows={box.rows} />
+            <Title>
+                {box.name}
+            </Title>
+            <main>
+                <BoxDetails box={box} />
+                <BoxRows rows={box.rows} />
+            </main>
         </>
-
-    )
-}
-
-export default Box;
+    );
+};

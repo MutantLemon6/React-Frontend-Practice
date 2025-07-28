@@ -1,19 +1,21 @@
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router-dom';
 
-const NavBar: React.FC = () => {
+export default function NavBar() {
     return (
-        <header style={{ backgroundColor: '#424242' }}>
+        <header className='bg-gray'>
             <nav className='navbar navbar-expand-lg'>
-                <div className="container-fluid">
-                    <div className='navbar-nav'>
-                        <Link className="nav-link text-white fw-bold px-3" to="/" style={{ backgroundColor: '#d84315' }}>MTG Card Organizer</Link>
-                        <Link className="nav-link active text-white px-3" to="/">Home</Link>
-                        <Link className="nav-link text-white px-3" to="/create-box">Create Box</Link>
-                    </div>
-                </div>
+                <ul className="navbar-nav">
+                    <li className='nav-item'>
+                        <Link className="nav-link text-white fw-bold bg-orange" to="/">MTG Card Organizer</Link>    
+                    </li>
+                    <li className='nav-item'>
+                        <NavLink className="nav-link text-white" to="/">Home</NavLink>
+                    </li>
+                    <li className='nav-item'>
+                        <NavLink className="nav-link text-white" to="/create-box">Create Box</NavLink>
+                    </li>
+                </ul>
             </nav>
         </header>
     );
 }
-
-export default NavBar;

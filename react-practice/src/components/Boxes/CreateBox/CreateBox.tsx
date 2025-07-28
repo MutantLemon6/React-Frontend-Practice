@@ -3,20 +3,23 @@ import type { IBox } from "../../../interfaces/box";
 import type { IRow } from "../../../interfaces/row";
 import { useNavigate } from "react-router-dom";
 
-const CreateBox: React.FC = () => {
+export default function CreateBox() {
     const navigate = useNavigate();
-    const [box, setBox] = useState<IBox & {numberOfRows?: number}>({ 
-        id: 0, 
-        name: "", 
-        imageUrl: "", 
-        createdDate: new Date().toISOString(), 
-        updatedDate: new Date().toISOString(), 
-        rows: [], 
-        cardCount: 0 
-    } as IBox & {numberOfRows?: number});
-    const change = (e: React.ChangeEvent<HTMLInputElement>) => setBox(
-        { ...box, [e.target.name]: e.target.value });
-    const submit = async (e: { preventDefault: () => void; }) => {
+    const [box, setBox] = useState<IBox & { numberOfRows?: number }>({
+        id: 0,
+        name: "",
+        imageUrl: "",
+        createdDate: new Date().toISOString(),
+        updatedDate: new Date().toISOString(),
+        rows: [],
+        cardCount: 0
+    } as IBox & { numberOfRows?: number });
+
+    function change(e: React.ChangeEvent<HTMLInputElement>) {
+        setBox({ ...box, [e.target.name]: e.target.value });
+    }
+
+    async function submit(e: { preventDefault: () => void; }) {
         e.preventDefault();
 
         const filledRows: IRow[] = Array(box.numberOfRows).fill(null).map(() => ({
@@ -27,7 +30,7 @@ const CreateBox: React.FC = () => {
             rows: filledRows
         }
 
-        const returnBox = await(await fetch("http://localhost:5000/api/boxes", {
+        const returnBox = await (await fetch("http://localhost:5000/api/boxes", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -46,5 +49,3 @@ const CreateBox: React.FC = () => {
         </form>
     )
 }
-
-export default CreateBox;

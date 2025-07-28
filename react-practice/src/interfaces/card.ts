@@ -8,5 +8,5 @@ export interface ICard {
     color: string[]
     colorIdentity: string[]
     rowId: number
-    row?:IRow
+    row?: IRow
 }
