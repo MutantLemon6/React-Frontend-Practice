@@ -4,6 +4,9 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./react-practice
     steps:
       - name: checkout repo
         uses: actions/checkout@v4
