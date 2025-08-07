@@ -4,8 +4,12 @@ on:
   workflow_dispatch:
 
 jobs:
+  
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]  
+    runs-on: ${{ matrix.os }}
     defaults:
       run:
         working-directory: ./react-practice
@@ -19,8 +23,11 @@ jobs:
       - run: npm install
       - run: npm run build
   test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     defaults:
       run:
         working-directory: ./react-practice
@@ -35,7 +42,9 @@ jobs:
       - run: npm run lint
   deploy:
     needs: test
-
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
     permissions:
       contents: write
       id-token: write
@@ -45,7 +54,7 @@ jobs:
       name: production
       url: ${{ steps.deployment.outputs.page_url }}
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     defaults:
       run:
         working-directory: ./react-practice
@@ -69,6 +78,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./react-practice/dist
+          name: "build-${{ matrix.os }}"
       - name: deploy
         id: deployment
         uses: actions/deploy-pages@v4
