@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { IBox } from "../../../interfaces/box";
 import type { IRow } from "../../../interfaces/row";
 import { useNavigate } from "react-router-dom";
+import { useTitle } from "../../Title/useTitle";
 
 export default function CreateBox() {
     const navigate = useNavigate();
+    const {setTitle} = useTitle();
     const [box, setBox] = useState<IBox & { numberOfRows?: number }>({
         id: 0,
         name: "",
@@ -15,6 +17,9 @@ export default function CreateBox() {
         cardCount: 0
     } as IBox & { numberOfRows?: number });
 
+    useEffect(() =>{
+        setTitle("Create Box")
+    }, [setTitle])
     function change(e: React.ChangeEvent<HTMLInputElement>) {
         setBox({ ...box, [e.target.name]: e.target.value });
     }

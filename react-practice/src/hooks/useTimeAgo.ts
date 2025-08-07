@@ -10,7 +10,7 @@ function getTimeAgoString(date: Date | string) {
     const diffDay = Math.floor(diffHour / 24);
     const diffMonth = Math.floor(diffDay / 30);
     const diffYear = Math.floor(diffDay / 365);
-
+    
     if (diffSec < 60) return `${diffSec} second${diffSec !== 1 ? 's' : ''} ago`;
     if (diffMin < 60) return `${diffMin} minute${diffMin !== 1 ? 's' : ''} ago`;
     if (diffHour < 12) return `${diffHour} hour${diffHour !== 1 ? 's' : ''} ago`;

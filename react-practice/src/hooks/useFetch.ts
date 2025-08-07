@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { fetchData } from "../services/fetchData";
 
-const baseUrl = "http://localhost:5000/api/";
+
 
 export default function useFetch<T>(url: string) {
     const [data, setData] = useState<T | null>(null);
@@ -8,24 +9,15 @@ export default function useFetch<T>(url: string) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        async function init() {
-            try {
-                const response = await fetch(baseUrl + url);
-                if (response.ok) {
-                    const json = await response.json();
-                    setData(json);
-                } else {
-                    throw response;
-                }
-            } catch (e) {
-                setError(e as Response);
-            }
-            finally {
-                setLoading(false);
-            }
-        }
-        init();
+        let isMounted = true;
+        fetchData<T>(url).then(json => {
+            if (isMounted) setData(json);
+        }).catch(e => {
+            if (isMounted) setError(e as Response);
+        }).finally(() => {
+            if (isMounted) setLoading(false);
+        });
+        return () => { isMounted = false; };
     }, [url])
-
     return { data, error, loading }
 }
