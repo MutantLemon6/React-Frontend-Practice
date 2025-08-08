@@ -19,6 +19,8 @@ jobs:
       - run: npm install
       - run: npm run build
   test:
+    permissions:
+      contents: read
     needs: build
     runs-on: ubuntu-latest
     defaults:
