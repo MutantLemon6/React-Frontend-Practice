@@ -1,25 +1,19 @@
-:root {
-    --orange: #ff5722;
-    --gray: #424242;
+body {
+    min-height: 100vh;
+    background-image: url('https://wallpapercave.com/wp/wp5413978.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
 }
 
-.bg-gray {
-    background-color: var(--gray);
+.translucent-bg {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-.bg-orange {
-    background-color: var(--orange);
-}
-
-.hover-effect {
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.hover-effect:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-}
-
-.clickable {
-    cursor: pointer;
+.sidebar-translucent {
+    background: rgba(5, 5, 5, 0.8);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }

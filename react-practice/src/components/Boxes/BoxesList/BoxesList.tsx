@@ -1,4 +1,4 @@
-import Thumbnail from "../Thumbnail/Thumbnail";
+import Thumbnail from "../Card/Card";
 import type { IBox } from "../../../interfaces/box";
 import useFetch from "../../../hooks/useFetch";
 import Spinner from "../../Spinner";
@@ -17,7 +17,7 @@ export default function BoxesList() {
     if (boxes === null) return <div>You do not have any boxes</div>
     return (
         <>
-            <div className="container-fluid p-4">
+            <div className="p-4">
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
                     {boxes?.map(box => (
                         <div className="col" key={box.id}>
