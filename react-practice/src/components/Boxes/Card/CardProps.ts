@@ -1,5 +1,5 @@
 import type { IBox } from "../../../interfaces/box";
 
-export interface ThumbnailProps {
+export interface CardProps {
     box: IBox;
 }

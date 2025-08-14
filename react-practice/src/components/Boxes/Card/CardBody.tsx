@@ -1,7 +1,7 @@
 import { useTimeAgo } from "../../../hooks/useTimeAgo";
-import type { ThumbnailProps } from "./ThumbnailProps";
+import type { CardProps } from "./CardProps";
 
-export default function ThumbnailBody({box}: ThumbnailProps ){
+export default function CardBody({ box }: CardProps) {
     const timeAgo = useTimeAgo(box.updatedDate);
     return (
         <div className="card-body">
