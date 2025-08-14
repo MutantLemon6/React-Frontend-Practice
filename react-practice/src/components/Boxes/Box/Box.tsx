@@ -24,10 +24,8 @@ export default function Box() {
 
     return (
         <>
-            <main>
-                <BoxDetails box={box} />
-                <BoxRows rows={box.rows} />
-            </main>
+            <BoxDetails box={box} />
+            <BoxRows rows={box.rows} />
         </>
     );
 };

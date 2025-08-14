@@ -16,16 +16,12 @@ export default function BoxesGrid() {
     if (error) throw error;
     if (boxes === null) return <div>You do not have any boxes</div>
     return (
-        <>
-            <div className="p-4">
-                <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-                    {boxes?.map(box => (
-                        <div className="col" key={box.id}>
-                            <Card box={box} />
-                        </div>
+            <div className="container">
+                <div className="row">
+                    {boxes.map((box) => (
+                        <Card key={box.id} box={box} />
                     ))}
                 </div>
             </div>
-        </>
     );
 }

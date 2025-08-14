@@ -5,9 +5,12 @@ import CardImage from "./CardImage";
 
 export default function Card({ box }: CardProps) {
     return (
-        <Link to={`/box/${box.id}`} className="card text-white border-0 h-100 bg-gray hover-effect text-decoration-none">
-            <CardImage box={box} />
-            <CardBody box={box} />
-        </Link>
+        <div className="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <Link to={`/box/${box.id}`} className="card text-decoration-none">
+                <CardImage box={box} />
+                <CardBody box={box} />
+            </Link>
+        </div>
+
     );
 };

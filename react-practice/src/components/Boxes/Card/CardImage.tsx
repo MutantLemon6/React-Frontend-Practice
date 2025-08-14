@@ -1,6 +1,6 @@
-import type { ThumbnailProps } from "./CardProps";
+import type { CardProps } from "./CardProps";
 
-export default function ThumbnailImage({ box }: ThumbnailProps) {
+export default function CardImage({ box }: CardProps) {
     return (
         <div className="card-img-top position-relative" style={{ height: '200px', overflow: 'hidden' }}>
             {box.imageUrl ? (

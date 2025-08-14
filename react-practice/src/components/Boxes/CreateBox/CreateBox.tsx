@@ -46,20 +46,45 @@ export default function CreateBox() {
     }
 
     return (
-        <form onSubmit={submit} className="container-fluid">
-            <div className="mb-3">
-                <label htmlFor="name" className="form-label text-white">Box Name</label>
-                <input type="text" name="name" value={box.name} onChange={change} placeholder="Box Name" required id="name" className="form-control"/>
-            </div>
-            <div className="mb-3">
-                <label htmlFor="numberOfRows" className="form-label text-white">Number of Rows</label>
-                <input type="number" name="numberOfRows" value={box.numberOfRows} onChange={change} placeholder="Number of Rows" required id="numberOfRows" className="form-control"/>
-            </div>
-            <div className="mb-3">
-                <label htmlFor="imageUrl" className="form-label text-white">Image URL</label>
-                <input type="text" name="imageUrl" value={box.imageUrl} onChange={change} placeholder="Image URL" required id="imageUrl" className="form-control"/>
-            </div>
-            <button type="submit" className="btn btn-primary">Create Box</button>
-        </form>
+        <div className="container">
+            <div className="row justify-content-center my-5">
+                <div className="col-lg-6">
+                    <form className="row justify-content-center my-5" onSubmit={submit}>
+                        <label htmlFor="name" className="form-label">Box Name</label>
+                        <input
+                            type="text"
+                            name="name"
+                            value={box.name}
+                            onChange={change}
+                            placeholder="Box Name"
+                            required
+                            id="name"
+                            className="form-control" />
+                        <label htmlFor="numberOfRows" className="form-label">Number of Rows</label>
+                        <input
+                            type="number"
+                            name="numberOfRows"
+                            value={box.numberOfRows}
+                            onChange={change}
+                            placeholder="Number of Rows"
+                            required
+                            id="numberOfRows"
+                            className="form-control" />
+                        <label htmlFor="imageUrl" className="form-label">Image URL</label>
+                        <input
+                            type="text"
+                            name="imageUrl"
+                            value={box.imageUrl}
+                            onChange={change}
+                            placeholder="Image URL"
+                            required
+                            id="imageUrl"
+                            className="form-control" />
+                        <button type="submit" className="btn btn-primary w-auto mt-3">Create Box</button>
+                    </form>
+                </div>
+            </div >
+        </div >
+
     )
 }

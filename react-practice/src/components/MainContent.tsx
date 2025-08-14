@@ -1,15 +1,15 @@
 import { Route, Routes } from "react-router-dom";
-import Title from "../Title/Title";
-import { TitleProvider } from "../Title/TitleProvider";
+import Title from "./Title/Title";
+import { TitleProvider } from "./Title/TitleProvider";
 import { Suspense } from "react";
-import Spinner from "../Spinner";
-import BoxesList from "../Boxes/BoxesList/BoxesList";
-import Box from "../Boxes/Box/Box";
-import CreateBox from "../Boxes/CreateBox/CreateBox";
+import Spinner from "./Spinner";
+import BoxesList from "./Boxes/BoxesGrid/BoxesGrid";
+import Box from "./Boxes/Box/Box";
+import CreateBox from "./Boxes/CreateBox/CreateBox";
 
 export default function MainContent() {
     return (
-        <div className="col-lg-10 col-md-6">
+        <div className="col-lg-10 col-md-6 vh-100">
             <TitleProvider>
                 <Title />
                 <Routes>
