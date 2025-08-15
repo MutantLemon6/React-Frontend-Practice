@@ -6,16 +6,18 @@ import Spinner from "./Spinner";
 import BoxesList from "./Boxes/BoxesGrid/BoxesGrid";
 import Box from "./Boxes/Box/Box";
 import CreateBox from "./Boxes/CreateBox/CreateBox";
+import Collection from "./Collection/Collection";
 
 export default function MainContent() {
     return (
-        <div className="col-lg-10 col-md-6 vh-100">
+        <div className="col-md-10 vh-100 overflow-auto">
             <TitleProvider>
                 <Title />
                 <Routes>
                     <Route index element={<Suspense fallback={<Spinner />}><BoxesList /></Suspense>} />
                     <Route path="box/:id" element={<Suspense fallback={<Spinner />}><Box /></Suspense>} />
                     <Route path="create-box" element={<CreateBox />} />
+                    <Route path="collection" element={<Suspense fallback={<Spinner />}><Collection /></Suspense>} />
                 </Routes>
             </TitleProvider>
         </div>

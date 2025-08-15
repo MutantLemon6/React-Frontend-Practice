@@ -21,7 +21,8 @@ export default function CreateBox() {
         setTitle("Create Box")
     }, [setTitle])
     function change(e: React.ChangeEvent<HTMLInputElement>) {
-        setBox({ ...box, [e.target.name]: e.target.value });
+        const {name, value} = e.target;
+        setBox({ ...box, [name]: name === "numberOfRows" ? Number(value) : value });
     }
 
     async function submit(e: { preventDefault: () => void; }) {

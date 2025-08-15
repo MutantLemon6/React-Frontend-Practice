@@ -18,6 +18,7 @@ export default function NavBar() {
                 <ul className="nav flex-column w-100">
                     <NavItem href="/">Home</NavItem>
                     <NavItem href="/create-box">Create Box</NavItem>
+                    <NavItem href="/collection">Collection</NavItem>
                 </ul>
             </div>
         </nav>
