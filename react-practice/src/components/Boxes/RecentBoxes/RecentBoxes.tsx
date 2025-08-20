@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import type { IBox } from "../../../interfaces/box";
 import { useTimeAgo } from "../../../hooks/useTimeAgo";
 
@@ -35,7 +35,7 @@ export default function RecentBoxes({ boxes = [], maxItems = 5 }: RecentBoxesPro
 function BoxItem({ box }: { box: IBox }) {
     const timeAgo = useTimeAgo(box.updatedDate)
     return (
-        <Link
+        <NavLink
             key={box.id}
             to={`/box/${box.id}`}
             className="d-block py-2 px-2 small text-decoration-none text-light rounded mb-1 sidebar-link"
@@ -49,6 +49,6 @@ function BoxItem({ box }: { box: IBox }) {
                     {timeAgo}
                 </small>
             </div>
-        </Link>
+        </NavLink>
     )
 }
