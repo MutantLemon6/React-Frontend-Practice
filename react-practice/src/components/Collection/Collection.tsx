@@ -68,7 +68,7 @@ export default function Collection() {
 
     return (
         <div className="container bg-light rounded p-3 border">
-            <CollectionDetails />
+            <CollectionDetails cards={cards} />
             <CollectionFilters
                 filters={filters}
                 sortBy={sortBy}

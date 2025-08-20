@@ -7,7 +7,7 @@ export default function NameFilter({ value, onChange }: NameFilterProps) {
     return (
         <div className="row">
             <div className="col-12">
-                <label className="form-label">
+                <label className="form-label w-100">
                     Name:
                     <input
                         type="text"

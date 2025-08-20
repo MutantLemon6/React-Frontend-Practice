@@ -9,7 +9,7 @@ export default function CountFilter({ minCount, maxCount, onMinChange, onMaxChan
     return (
         <div className="row">
             <div className="col">
-                <label className="form-label">
+                <label className="form-label w-100">
                     Min Count:
                     <input
                         type="number"
@@ -21,7 +21,7 @@ export default function CountFilter({ minCount, maxCount, onMinChange, onMaxChan
                 </label>
             </div>
             <div className="col">
-                <label className="form-label">
+                <label className="form-label w-100">
                     Max Count:
                     <input
                         type="number"

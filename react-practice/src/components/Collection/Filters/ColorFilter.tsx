@@ -6,7 +6,7 @@ interface ColorFilterProps {
 
 export default function ColorFilter({ title, values, onChange }: ColorFilterProps) {
     return (
-        <fieldset>
+        <fieldset className="col">
             <legend>{title}</legend>
             {Object.keys(values).map((key) => (
                 <label key={key} className="me-3">
