@@ -22,7 +22,7 @@ export default function Box() {
     if (loading) return <Spinner />;
     if (!box) return <PageNotFound />
     return (
-        <div className="container mb-3">
+        <div className="container mb-3" key={box.id}>
             <CardCountProvider>
                 <BoxDetails box={box} />
                 <BoxRows rows={box.rows} />

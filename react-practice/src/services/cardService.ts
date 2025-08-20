@@ -70,7 +70,7 @@ export async function fetchCards(filters?: CardFilters, sortBy?:string) {
 }
 
 export async function fetchCardsfromScryfall(name: string) {
-  const response = await fetch(`${baseUrl}scryfall/cards?name=${encodeURIComponent(name)}`);
+  const response = await fetch(`${baseUrl}cards/scryfall?name=${encodeURIComponent(name)}`);
   if(!response.ok) throw response;
   return await response.json();  
 }
