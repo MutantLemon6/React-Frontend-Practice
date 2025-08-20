@@ -67,7 +67,7 @@ export default function Collection() {
     };
 
     return (
-        <div className="container bg-light rounded p-3 border">
+        <div className="container bg-light rounded p-3 border mb-3">
             <CollectionDetails cards={cards} />
             <CollectionFilters
                 filters={filters}
@@ -78,6 +78,5 @@ export default function Collection() {
             />
             <CollectionList cards={cards} />
         </div>
-
     );
 }
