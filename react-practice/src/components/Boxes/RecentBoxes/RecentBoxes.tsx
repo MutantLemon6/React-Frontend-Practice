@@ -1,3 +1,4 @@
+
 import { useBoxes } from "../Box/context/useBoxes";
 import BoxItem from "./BoxItem";
 
@@ -24,6 +25,7 @@ export default function RecentBoxes({ maxItems = 5 }: RecentBoxesProps) {
         .slice(0, maxItems);
 
     if (!recentBoxes || recentBoxes.length === 0) {
+
         return <div className="mt-3">
             <small className=" d-block mb-2">Recent Boxes</small>
             <small>No boxes accessed recently</small>
@@ -39,4 +41,3 @@ export default function RecentBoxes({ maxItems = 5 }: RecentBoxesProps) {
         </div>
     );
 }
-

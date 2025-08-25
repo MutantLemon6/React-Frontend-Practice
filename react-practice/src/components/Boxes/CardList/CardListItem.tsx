@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { ICard } from "../../../interfaces/card";
 import { useCardCount } from "../Box/BoxDetails/useCardCount";
 
@@ -13,6 +13,10 @@ export default function CardListItem({ card, onDelete, onUpdate }: CardListIemPr
     const [isDeleting, setIsDeleting] = useState(false);
     const {cardCount, setCardCount} = useCardCount();
 
+    useEffect(() => {
+        setCount(card.count);
+    }, [card.count]);
+    
     const handleIncrement = async () => {
         const newCount = count + 1;
         setCount(newCount);
