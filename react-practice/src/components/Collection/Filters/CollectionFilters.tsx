@@ -8,7 +8,7 @@ import SortBySelector from "./SortBySelector";
 interface CollectionFiltersProps {
     filters: CardFilters;
     sortBy: string;
-    onFilterChange: (field: keyof CardFilters, value: any) => void;
+    onFilterChange: (field: keyof CardFilters, value: string | number | undefined) => void;
     onNestedFilterChange: (
         filterGroup: "color" | "colorIdentity",
         colorKey: keyof CardFilters["color"] | keyof CardFilters["colorIdentity"],
