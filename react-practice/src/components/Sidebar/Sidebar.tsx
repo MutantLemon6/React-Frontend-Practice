@@ -9,7 +9,7 @@ export default function Sidebar() {
   return (
     <Collapsible>
       <NavBar />
-      <RecentBoxes boxes={boxes} />
+      <RecentBoxes />
       <QuickStats boxes={boxes} />
     </Collapsible>
   );
