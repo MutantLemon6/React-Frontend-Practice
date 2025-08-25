@@ -45,7 +45,7 @@ export default function Collection() {
         fetchData();
     }, [sortBy, filters]);
 
-    const updateFilter = (field: keyof CardFilters, value: any) => {
+    const updateFilter = (field: keyof CardFilters, value: string | number) => {
         setFilters((prev) => ({
             ...prev,
             [field]: value
