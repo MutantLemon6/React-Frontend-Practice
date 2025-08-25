@@ -9,4 +9,3 @@ export function TitleProvider({ children }: { children: ReactNode }) {
         </TitleContext.Provider>
     );
 }
-

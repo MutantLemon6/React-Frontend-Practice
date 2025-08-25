@@ -8,7 +8,7 @@ interface NavItemProps {
 export default function NavItem({href, children} : NavItemProps) {
     return (
         <li className="nav-item">
-            <NavLink className="nav-link text-white" to={href}>{children}</NavLink>
+            <NavLink className="nav-link text-white sidebar-link rounded" to={href}>{children}</NavLink>
         </li>
     );
 }

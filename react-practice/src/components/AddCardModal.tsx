@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { ICard } from "../interfaces/card";
-import { fetchCards } from "../services/cardService";
+import { fetchCardsfromScryfall } from "../services/cardService";
 
 interface AddCardModalProps {
     show: boolean;
@@ -22,7 +22,7 @@ export default function AddCardModal({ show, onClose, rowId, onSave }: AddCardMo
         }
         setIsFetching(true);
         const timeout = setTimeout(async () => {
-            await fetchCards(search).then(data => {
+            await fetchCardsfromScryfall(search).then(data => {
                 setSearchResults(data || []);
                 setIsFetching(false);
             });
