@@ -9,7 +9,7 @@ export default function BoxDetails({ box }: { box: IBox }) {
 
     useEffect(() => {
         setCardCount(box.cardCount);
-    }, [box.cardCount, setCardCount])
+    }, [box.cardCount, setCardCount]);
     return (
         <section className="mb-3">
             <div className="d-flex">
