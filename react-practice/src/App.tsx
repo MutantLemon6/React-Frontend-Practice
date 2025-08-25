@@ -4,7 +4,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import MainContent from "./components/MainContent";
 import { BoxesProvider } from "./components/Boxes/Box/context/BoxesProvider";
 import Header from "./components/Header";
-import Footer from "./components/Header";
+import Footer from "./components/Footer";
 
 
 function App() {
