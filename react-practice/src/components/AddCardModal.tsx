@@ -68,7 +68,8 @@ export default function AddCardModal({ show, onClose, rowId, onSave }: AddCardMo
                                 Add Cards to Row {rowId}
                                 <button className="btn-close" onClick={onClose}></button>
                             </div>
-                            <div className="modal-body">
+                        </div>
+                        <div className="modal-body">
                                 {cards.map((card, index) => (
                                     <div className="row mb-3" key={index}>
                                         <div className="col">
@@ -129,7 +130,6 @@ export default function AddCardModal({ show, onClose, rowId, onSave }: AddCardMo
                                     Save Cards
                                 </button>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
