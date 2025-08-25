@@ -4,7 +4,7 @@ import type { IBox } from "../../../../interfaces/box";
 export interface BoxesContextType {
     boxes: IBox[] | null;
     loading: boolean;
-    error: string;
+    error: Response | null;
 }
 
 export const BoxesContext = createContext<BoxesContextType | undefined>(undefined);
